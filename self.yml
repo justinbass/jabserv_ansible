@@ -1,0 +1,8 @@
+---
+- hosts: localhost
+  tasks:
+  - name: Install tmux
+    yum: name={{ item }}
+    with_items:
+      - tmux
+      - nodejs
