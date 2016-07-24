@@ -1,8 +1,12 @@
 ---
 - hosts: localhost
   tasks:
-  - name: Install tmux
+  - name: Install yum packages
     yum: name={{ item }}
     with_items:
       - tmux
       - nodejs
+      - npm
+
+  - name: Install npm packages
+    npm: name=express global=yes
